@@ -11,8 +11,7 @@ public class SettingsReader {
     private SettingsPrompt[] loadPrompts() {
         Gson gson = new Gson();
 
-        InputStreamReader jsonFromJar = new InputStreamReader(ClassLoader.getSystemResourceAsStream(Settings.getPromptsPath()), StandardCharsets.UTF_8);
-        System.out.println("GSon: "+gson+" jsonFromJar: "+jsonFromJar);
+        InputStreamReader jsonFromJar = new InputStreamReader(ClassLoader.getSystemResourceAsStream(Settings.getPromptsPath()), StandardCharsets.UTF_8);        
         return gson.fromJson(jsonFromJar, SettingsPrompt[].class);
     }
 
@@ -25,6 +24,7 @@ public class SettingsReader {
                 System.out.println("Error al definir la variable Prompt");
                 continue;
             }
+            System.out.println("Prompt: "+prompt);
             String defaultValue = Settings.get(prompt.getKey(), prompt.getValue());
             String value = console.readLine("%s [%s]:\n", prompt.getPrompt(), defaultValue);
             Settings.set(prompt.getKey(), value.isBlank() ? defaultValue : value);
