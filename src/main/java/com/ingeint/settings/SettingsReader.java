@@ -19,12 +19,7 @@ public class SettingsReader {
         Console console = System.console();
 
         for (SettingsPrompt prompt : loadPrompts()) {
-            if(prompt == null)
-            {
-                System.out.println("Error al definir la variable Prompt");
-                continue;
-            }
-            System.out.println("Prompt: "+prompt);
+            System.out.println("Console: "+console);
             String defaultValue = Settings.get(prompt.getKey(), prompt.getValue());
             String value = console.readLine("%s [%s]:\n", prompt.getPrompt(), defaultValue);
             Settings.set(prompt.getKey(), value.isBlank() ? defaultValue : value);
