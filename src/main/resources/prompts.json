@@ -1,17 +1,17 @@
 [
   {
     "prompt": "Name",
-    "value": "iDempiere Plugin Template",
+    "value": "Plugin Example",
     "key": "plugin.name"
   },
   {
     "prompt": "iDempiere Version",
-    "value": "8.2.0",
+    "value": "11.0.0",
     "key": "idempiere.version"
   },
   {
     "prompt": "Symbolic Name",
-    "value": "com.ingeint.template",
+    "value": "com.ingeint.example",
     "key": "plugin.symbolic.name"
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "prompt": "Root Package",
-    "value": "com.ingeint.template",
+    "value": "com.ingeint.example",
     "key": "plugin.root"
   },
   {
