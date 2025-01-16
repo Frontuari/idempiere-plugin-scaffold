@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ${plugin.name} Test
 Bundle-SymbolicName: ${plugin.symbolic.name}.test
+Automatic-Module-Name: ${plugin.symbolic.name}
 Bundle-Version: ${idempiere.version}.qualifier
 Bundle-Vendor: ${plugin.vendor}
 Fragment-Host: ${plugin.symbolic.name}

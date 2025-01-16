@@ -20,7 +20,7 @@ Put the plugin description here
 
 ## Prerequisites
 
-- Java 11, commands `java` and `javac`.
+- Java 17, commands `java` and `javac`.
 - iDempiere ${idempiere.version}
 - Set `IDEMPIERE_REPOSITORY` env variable
 
