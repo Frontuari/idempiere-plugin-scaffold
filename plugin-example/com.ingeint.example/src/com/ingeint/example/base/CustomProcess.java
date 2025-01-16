@@ -13,74 +13,19 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * Copyright (C) ${year} ${plugin.vendor} and contributors (see README.md file).
+ * Copyright (C) 2024 INGEINT <https://www.ingeint.com> and contributors (see README.md file).
  */
 
-package ${plugin.root}.base;
-
-import java.util.List;
-import java.util.stream.Collectors;
+package com.ingeint.example.base;
 
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.compiere.util.DB;
 
 /**
  * Custom Process
  */
 public abstract class CustomProcess extends SvrProcess {
 
-<<<<<<< HEAD
-	private List<String> selection = null;
-	
-	private List<List<Object>> getRows() {
-		
-		List<List<Object>> rows = null;
-		
-		StringBuffer sql = new StringBuffer("SELECT ViewID FROM T_Selection")
-				.append(" WHERE AD_PInstance_ID=?");
-		
-		rows = DB.getSQLArrayObjectsEx(get_TrxName(), sql.toString(), getAD_PInstance_ID());
-		
-		return rows;
-	}
-	
-	private List<String> getSelectionFromDB() {
-		
-		return getRows()
-			.stream()
-			.filter(row -> row.size() > 0)
-			.map(row -> (String) row.get(0))
-			.collect(Collectors.toList());
-	}
-	
-	/*
-	 * Obtains the selection by An Integer
-	 */
-	public List<String> getSelection() {
-		
-		if (selection == null || selection.isEmpty())
-			selection = getSelectionFromDB();
-		
-		return selection;
-	}
-	
-	public List<Integer> getSelectionAsInt() {
-		
-		return getSelection()
-				.stream()
-				.filter(select -> select != null && !select.isEmpty())
-				.map(select -> Integer.parseInt(select))
-				.collect(Collectors.toList());
-	}
-	
-	public boolean isSelection() {
-		
-		selection = getSelection();
-		return selection != null && !selection.isEmpty();
-
-	}
-	
 	@Override
 	protected void prepare() {
 		// empty on purpose
